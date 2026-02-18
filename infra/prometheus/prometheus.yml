@@ -1,0 +1,16 @@
+global:
+  scrape_interval: 5s # How often to pull metrics from targets
+  evaluation_interval: 5s # How often to evaluate rules
+
+scrape_configs:
+  # Monitoring the Prometheus server itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Monitoring the Spring Boot Backend
+  # Note: 'backend' refers to the service name we will use in individual projects
+  - job_name: 'spring-boot-backend'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['backend:8080']
