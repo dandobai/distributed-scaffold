@@ -1,0 +1,26 @@
+# --- IDE & System ---
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# --- Java / Kotlin (Spring) ---
+**/build/
+**/out/
+**/target/
+.gradle/
+build.gradle.kts.lock
+gradle-app.setting
+!gradle-wrapper.jar
+
+# --- Node / Vue ---
+**/node_modules/
+**/dist/
+.npm
+*.log
+
+# --- Docker & Infra ---
+.env
+**/postgres_data/
+**/kafka_data/
